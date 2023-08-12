@@ -1,5 +1,18 @@
 from tkinter import *
 from PIL import ImageTk,Image
+from tkinter import messagebox
+
+
+def handle_login():
+    email=email_input.get()
+    password=password_input.get()
+
+    if email=='aswathi@gmail.com' and password=='1234':
+        messagebox.showinfo('success','Login success')
+    else:
+        messagebox.showerror('error','Login failed')
+
+    
 
 root = Tk()
 root.title("login")
@@ -34,7 +47,7 @@ password_label.config(font=('verdana',12))
 password_input=Entry(root,width=50)
 password_input.pack(ipady=6,pady=(1,15))
 
-login_btn=Button(root,text='Login Here',fg='#242020',bg='white',width=15,height=1)
+login_btn=Button(root,text='Login Here',fg='#242020',bg='white',width=15,height=1,command=handle_login)
 login_btn.pack(pady=(10,20))
 login_btn.config(font=('verdana',14))
 
